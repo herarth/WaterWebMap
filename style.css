@@ -3,11 +3,41 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
+
 h2 {
     text-align: center;
     margin-top: 10px;
 }
+
 #map {
-    height: 90vh;   /* 90% of the screen height */
+    height: 90vh;
     width: 100%;
+}
+
+#feedback {
+    padding: 30px 15px;
+    background: #f5f5f5;
+}
+
+.feedback-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.feedback-card h2 {
+    margin-top: 0;
+}
+
+.feedback-card p {
+    text-align: center;
+}
+
+.feedback-card iframe {
+    width: 100%;
+    min-height: 949px;
+    border: 0;
 }

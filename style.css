@@ -1,43 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: Arial, sans-serif;
 }
 
-h2 {
+body {
+    overflow: hidden;
+}
+
+.page-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 22px;
     text-align: center;
-    margin-top: 10px;
+}
+
+.webmap-layout {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px);
+}
+
+.map-panel {
+    flex: 1 1 70%;
+    min-width: 0;
+    height: 100%;
 }
 
 #map {
-    height: 90vh;
     width: 100%;
+    height: 100%;
 }
 
-#feedback {
-    padding: 30px 15px;
+.feedback-panel {
+    flex: 0 0 380px;
+    width: 380px;
+    height: 100%;
+    overflow-y: auto;
     background: #f5f5f5;
+    border-left: 1px solid #d8d8d8;
+    padding: 15px;
 }
 
 .feedback-card {
-    max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
+    width: 100%;
+    background: #ffffff;
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .feedback-card h2 {
-    margin-top: 0;
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 20px;
 }
 
 .feedback-card p {
+    margin: 0 0 12px;
     text-align: center;
+    line-height: 1.4;
+    font-size: 14px;
 }
 
 .feedback-card iframe {
+    display: block;
     width: 100%;
+    height: 949px;
     min-height: 949px;
     border: 0;
+}
+
+/* Mobile / small screens */
+@media (max-width: 800px) {
+    body {
+        overflow: auto;
+    }
+
+    .page-header {
+        height: auto;
+        min-height: 60px;
+        padding: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 18px;
+    }
+
+    .webmap-layout {
+        display: block;
+        height: auto;
+    }
+
+    .map-panel {
+        height: 60vh;
+    }
+
+    .feedback-panel {
+        width: 100%;
+        height: auto;
+        border-left: 0;
+        border-top: 1px solid #d8d8d8;
+        overflow-y: visible;
+    }
 }
